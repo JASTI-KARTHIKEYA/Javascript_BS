@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="date" onclick="Ldate()">Show Date</button>
+    <p id="result">The Result is:</p>
+    <button id="time" onclick="Ltime()">Show Time</button>
+    <p id="result2">The Result is:</p>
+
+    <script>
+      function Ldate() {
+        const date1 = new Date();
+        var options = { day: "numeric", month: "long", year: "numeric" };
+        document.getElementById("result").innerHTML = date1.toLocaleDateString(
+          "en-US",
+          options
+        );
+      }
+      function Ltime() {
+        const date2 = new Date();
+        document.getElementById("result2").innerHTML = date2;
+      }
+    </script>
+  </body>
+</html>

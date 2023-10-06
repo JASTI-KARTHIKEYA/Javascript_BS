@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a = prompt("Enter the string");
+      console.log("Given string : " + a);
+      var arr = a.split("");
+      var temp = "a";
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+          if (arr[i] > arr[j]) {
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+          }
+        }
+      }
+      var str = arr.join("");
+      console.log(str);
+    </script>
+  </body>
+</html>

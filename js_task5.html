@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        margin-top: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: max-content;
+      }
+      td {
+        text-align: center;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <table>
+        <tr>
+          <td><label for="name">Name : </label></td>
+          <td><input type="text" id="name" placeholder="name" required /></td>
+          <td id="name_res"></td>
+        </tr>
+
+        <tr>
+          <td><label for="email">Email :</label></td>
+          <td>
+            <input type="email" id="email" placeholder="email" required />
+          </td>
+          <td id="email_res"></td>
+        </tr>
+        <tr>
+          <td><label for="website">Website : </label></td>
+          <td>
+            <input type="url" id="website" placeholder="website" required />
+          </td>
+          <td id="url_res"></td>
+        </tr>
+        <tr>
+          <td><label for="message">Message :</label></td>
+          <td>
+            <input
+              type="message"
+              id="message"
+              placeholder="message"
+              style="height: 75px"
+            />
+          </td>
+          <td id="mes_res"></td>
+        </tr>
+      </table>
+      <button id="div" onclick="check()">Submit</button>
+    </div>
+
+    <script>
+      function check() {
+        var name1 = document.getElementById("name").value;
+        var email1 = document.getElementById("email").value;
+        var website1 = document.getElementById("website").value;
+        var message1 = document.getElementById("message").value;
+        var mail_check = email1.split("@");
+        var web_check = website1.split(".");
+
+        if (name1 == "") {
+          document.getElementById("name_res").innerHTML =
+            "This field is required";
+        }
+        if (mail_check[1] != "gmail.com") {
+          document.getElementById("email_res").innerHTML =
+            "Valid Email is required";
+        }
+        if (message1 == "") {
+          document.getElementById("mes_res").innerHTML =
+            "This feild is required";
+        }
+        if (web_check[1] != "com") {
+          document.getElementById("url_res").innerHTML =
+            "Valid website is required";
+        }
+      }
+    </script>
+  </body>
+</html>
